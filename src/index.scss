@@ -1,1 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
+
+.jumbotron.fixed-bottom {
+  position: relative;
+  margin-bottom: 0 !important;
+  background-color:rgba(14%, 44%, 63%, 0.3) ;
+}
+
+.jumbotron {
+  text-align: center;
+  background: transparent;
+}
+
+.footer-group {
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+}
+
+.gitRepo {
+  color: #ffffff;
+  font-weight: bolder;
+  text-shadow: 2px 2px 2px #000000;
+}
