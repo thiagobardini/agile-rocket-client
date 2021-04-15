@@ -12,6 +12,11 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 
 // IMPORT ACCOUNT CRUD COMPONENTS
 import AccountCreate from './components/AccountRoutes/CreateAccount'
+import AccountIndex from './components/AccountRoutes/IndexAccount'
+import AccountShow from './components/AccountRoutes/ShowAccount'
+import AccountUpdate from './components/AccountRoutes/UpdateAccount'
+import HomePageAccount from './components/AccountRoutes/HomePageAccount'
+import './index.scss'
 
 class App extends Component {
   constructor (props) {
@@ -71,7 +76,31 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/account-create' render={() => (
             <AccountCreate msgAlert={this.msgAlert} user={user} />
           )} />
+          <AuthenticatedRoute user={user} exact path='/accounts' render={() => (
+            <AccountIndex msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route user={user} exact path='/accounts/:id' render={() => (
+            <AccountShow msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/accounts/:id/edit' render={() => (
+            <AccountUpdate msgAlert={this.msgAlert} user={user} />
+          )}/>
+          <Route exact path='/' render={() => (
+            <div className="jumbotron">
+              <h1 className="display-4">Welcome!</h1>
+              <p className="lead">Agile Rocket -  CRM</p>
+              <hr className="my-4"/>
+            </div>
+          )}/>
+          <AuthenticatedRoute user={user} exact path='/' render={() => (
+            <HomePageAccount msgAlert={this.msgAlert} />
+          )}/>
         </main>
+        <div className="jumbotron jumbotron-fluid fixed-bottom footer-group mt-5">
+          <div className="container-fluid">
+            <p>Copyright &copy; 2021 - by <a href="https://github.com/thiagobardini" className="button gitRepo" data-abc="true">Thiago Bardini</a></p>
+          </div>
+        </div>
       </Fragment>
     )
   }

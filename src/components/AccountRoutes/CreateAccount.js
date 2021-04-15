@@ -13,7 +13,8 @@ class AccountCreate extends Component {
         contact: '',
         email: '',
         address: '',
-        phone: ''
+        phone: '',
+        userName: null
       },
       createdAccountId: null
     }
@@ -31,7 +32,7 @@ class AccountCreate extends Component {
     const { user, msgAlert } = this.props
     const { account } = this.state
     accountCreate(account, user)
-      .then(res => this.setState({ createdPostId: res.data.account._id }))
+      .then(res => this.setState({ createdAccountId: res.data.account._id }))
       .then(() => msgAlert({
         heading: 'Created account successfully',
         message: 'Showing created account',
