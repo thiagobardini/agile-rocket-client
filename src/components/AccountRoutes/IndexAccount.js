@@ -53,7 +53,7 @@ class AccountIndex extends Component {
           <p className="card-text">{account.email}</p>
           <p className="card-text">{account.address}</p>
           <p className="card-text">{account.phone}</p>
-          {/* <p className="card-text">{this.user.userName}</p> */}
+          <p className="card-text">User Name: {account.owner.userName}</p>
           <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
         </div>
       </div>
