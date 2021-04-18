@@ -97,9 +97,12 @@ class ShowAccount extends Component {
           <p>{account.email}</p>
           <p>{account.address}</p>
           <p>{account.phone}</p>
+          <hr/>
+          <p>{account.opportunities.opportunityName}</p>
           <p><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
           <button onClick={this.deleteAccount}><Link to={'/'}>Delete</Link></button>
           <button><Link to={'/accounts/' + this.props.match.params.id + '/edit/'}>Update Account</Link></button>
+          <button><Link to={'/accounts/' + this.props.match.params.id + '/opportunity-create'}>Create Opportunity</Link></button>
         </div>
       )
     }

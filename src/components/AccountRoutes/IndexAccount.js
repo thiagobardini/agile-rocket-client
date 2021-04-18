@@ -36,6 +36,7 @@ class AccountIndex extends Component {
   }
   render () {
     const { accounts } = this.state
+    let accountJsx = ''
     if (!accounts) {
       return (
         <Spinner animation="border" role="status">
@@ -43,8 +44,7 @@ class AccountIndex extends Component {
         </Spinner>
       )
     }
-
-    const accountJsx = accounts.map(account => (
+    accountJsx = accounts.map(account => account.opportunities[0] === undefined ? (
       <div className="card" key={account._id}>
         <div className="card-body">
           <Link to={`/accounts/${account._id}`} key={account._id}><h4 className="card-title">{account.accountName}</h4></Link>
@@ -57,8 +57,22 @@ class AccountIndex extends Component {
           <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
         </div>
       </div>
-
-    ))
+    ) : (
+      <div className="card" key={account._id}>
+        <div className="card-body">
+          <Link to={`/accounts/${account._id}`} key={account._id}><h4 className="card-title">{account.accountName}</h4></Link>
+          <p className="card-text">{account.industry}</p>
+          <p className="card-text">{account.contact}</p>
+          <p className="card-text">{account.email}</p>
+          <p className="card-text">{account.address}</p>
+          <p className="card-text">{account.phone}</p>
+          <p className="card-text">User Name: {account.owner.userName}</p>
+          <p className="card-text">Opportunity Name: {account.opportunities[0].opportunityName}</p>
+          <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
+        </div>
+      </div>
+    )
+    )
     return (
       <div>
         {this.state.index}
