@@ -20,6 +20,7 @@ import './index.scss'
 
 // OPPORTUNITIES COMPONENTS
 import OpportunityCreate from './components/OpportunityRoutes/CreateOpportunity'
+// import OpportunityUpdate from './components/OpportunityRoutes/UpdateOpportunity'
 
 class App extends Component {
   constructor (props) {
@@ -98,9 +99,9 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/' render={() => (
             <HomePageAccount msgAlert={this.msgAlert} />
           )}/>
-          <AuthenticatedRoute user={user} path='/accounts/:id/opportunities' render={() => (
-            <OpportunityCreate msgAlert={this.msgAlert} user={user} />
-          )} />
+          {/* <AuthenticatedRoute user={user} path='/accounts/:id/opportunity-update' render={() => (
+            <OpportunityUpdate msgAlert={this.msgAlert} user={user} />
+          )} /> */}
           <AuthenticatedRoute user={user} exact path='/accounts/:id/opportunity-create' render={() => (
             <OpportunityCreate msgAlert={this.msgAlert} user={user} />
           )} />

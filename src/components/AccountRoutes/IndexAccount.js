@@ -67,7 +67,13 @@ class AccountIndex extends Component {
           <p className="card-text">{account.address}</p>
           <p className="card-text">{account.phone}</p>
           <p className="card-text">User Name: {account.owner.userName}</p>
+          <h4>Opportunity</h4>
           <p className="card-text">Opportunity Name: {account.opportunities[0].opportunityName}</p>
+          <p className="card-text">Opportunity Name: {account.opportunities[0].stage}</p>
+          <p className="card-text">Opportunity Name: {account.opportunities[0].probability}</p>
+          <p className="card-text">Opportunity Name: {account.opportunities[0].amount}</p>
+          <p className="card-text">Opportunity Name: {account.opportunities[0].closeDate}</p>
+          <p className="card-text">Opportunity Name: {account.opportunities[0].dateCreated}</p>
           <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
         </div>
       </div>
