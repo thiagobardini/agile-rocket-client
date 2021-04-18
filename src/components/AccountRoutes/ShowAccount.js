@@ -80,7 +80,7 @@ class ShowAccount extends Component {
           </div>
         </div>
       )
-    } else if ((user && user._id === account.owner) && (account.opportunities[0] !== undefined)) {
+    } else if ((user && user._id === account.owner) && (account.opportunities[0] === true)) {
       accountJsx = (
         <div key={account._id}>
           <h4>{account.accountName}</h4>
