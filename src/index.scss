@@ -1,30 +1,53 @@
 
 $primary: #FFC300; 
-$secondary: #003566;
+$secondary: #f3efff;
+$agileDark: #17152D;
+$agileGrey: #5A5A5A;
 $dark: #000814;
 
 html {
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #ffc300 50%, #003566 100%);
-  font-family: 'Open Sans', Arial, sans-serif;
+  // background-color: #ffc300;
+  // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23f3efff' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
 }
 
 .navbar-brand {
   color: #000814 !important;
 }
 
+.navbar-dark .navbar-text {
+  color: #f3efff;
+}
+
 .navbar-dark, .navbar-nav, .nav-link  {
   color: #003566 !important;
 }
+
 
 @import '~bootstrap/scss/bootstrap';
 
 .jumbotron.fixed-bottom {
   position: relative;
   margin-bottom: 0 !important;
-  // background-color:rgba(0, 8, 20, 0.9) ;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #ffc300 50%, #003566 100%);
+  // background-color:rgba(255, 195, 11, 1);
+  // background-color: #2E53FF;
+  // background-image: linear-gradient(62deg, #ffc300 0%, #f3efff 40%, #17152d 0%);
+  // background-color: #ffc300;
+  // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffc300'/%3E%3Cstop offset='1' stop-color='%23f3efff'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+  // background-attachment: fixed;
+  // background-size: cover;
+}
+
+.card-body {
+  // background-color: rgba(227, 209, 32, 0.6);
+  background-color: $secondary;
+}
+
+body {
+  // background-color:#f3efff;  
+  background-color: #ffc300;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23ffc300' cx='50' cy='0' r='50'/%3E%3Cg fill='%23ffbe29' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffba41' cx='50' cy='100' r='50'/%3E%3Cg fill='%23ffb655' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffb469' cx='50' cy='200' r='50'/%3E%3Cg fill='%23ffb27b' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffb28d' cx='50' cy='300' r='50'/%3E%3Cg fill='%23ffb39f' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffb5af' cx='50' cy='400' r='50'/%3E%3Cg fill='%23ffb8bf' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffbcce' cx='50' cy='500' r='50'/%3E%3Cg fill='%23ffc1db' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffc7e6' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ffccf0' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffd2f8' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ffd8fd' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ffddff' cx='50' cy='800' r='50'/%3E%3Cg fill='%23ffe2ff' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23f9e7ff' cx='50' cy='900' r='50'/%3E%3Cg fill='%23f5ebff' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23f3efff' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: contain;
 }
 
 .jumbotron {
@@ -34,11 +57,11 @@ html {
 
 .footer-group {
   font-family: 'Roboto', sans-serif;
-  color: #000000;
+  color: $agileDark;
 }
 
 .gitRepo {
-  color: #ffffff;
+  color: #f3efff;
   font-weight: bolder;
   text-shadow: 2px 2px 2px #000000;
 }
