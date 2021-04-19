@@ -64,7 +64,7 @@ class ShowAccount extends Component {
     }
     if (!user) {
       return <Redirect to='/'/>
-    } else if (user && user._id !== account.owner) {
+    } else if ((user && user._id !== account.owner) && (account.opportunities[0] !== undefined)) {
       accountJsx = (
         <div className="card" key={account._id}>
           <div className="card-body">
@@ -74,13 +74,20 @@ class ShowAccount extends Component {
             <p className="card-text">{account.email}</p>
             <p className="card-text">{account.address}</p>
             <p className="card-text">{account.phone}</p>
+            <p className="card-text">User Name: {account.owner.userName}</p>
             <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
             <hr/>
-            <p>Opportunity name: {account.opportunities.opportunityName}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].opportunityName}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].ownerOppor}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].stage}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].probability}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].amount}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].closeDate}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].dateCreated}</p>
           </div>
         </div>
       )
-    } else if ((user && user._id === account.owner) && (account.opportunities[0] === true)) {
+    } else if ((user && user._id !== account.owner) && (account.opportunities[0] === undefined)) {
       accountJsx = (
         <div key={account._id}>
           <h4>{account.accountName}</h4>
@@ -94,13 +101,9 @@ class ShowAccount extends Component {
           <button onClick={this.deleteAccount}><Link to={'/'}>Delete</Link></button>
           <button><Link to={'/accounts/' + this.props.match.params.id + '/edit/'}>Update Account</Link></button>
           <hr/>
-          {/* <button><Link to={'/accounts/' + this.props.match.params.id + '/opportunity-update'}>Create Opportunity</Link></button> */}
-          <p className="card-text">Opportunity Name: {account.opportunities[0].opportunityName}</p>
-          <p className="card-text">Opportunity Name: {account.opportunities[0].stage}</p>
-          <p className="card-text">Opportunity Name: {account.opportunities[0].probability}</p>
-          <p className="card-text">Opportunity Name: {account.opportunities[0].amount}</p>
-          <p className="card-text">Opportunity Name: {account.opportunities[0].closeDate}</p>
-          <p className="card-text">Opportunity Name: {account.opportunities[0].dateCreated}</p>
+          <button><Link to={'/accounts/' + this.props.match.params.id + '/opportunity-create'}>Create Opportunity</Link></button>
+          <p>No opportunity yet</p>
+          {/* <p>Only account owner can create an opportunity</p> */}
         </div>
       )
     } else if ((user && user._id === account.owner) && (account.opportunities[0] === undefined)) {
@@ -112,6 +115,7 @@ class ShowAccount extends Component {
           <p>{account.email}</p>
           <p>{account.address}</p>
           <p>{account.phone}</p>
+          <p className="card-text">User Name: {account.owner.userName}</p>
           <p><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
           <button onClick={this.deleteAccount}><Link to={'/'}>Delete</Link></button>
           <button><Link to={'/accounts/' + this.props.match.params.id + '/edit/'}>Update Account</Link></button>
@@ -120,6 +124,30 @@ class ShowAccount extends Component {
           <h4>No opportunity yet</h4>
         </div>
       )
+    } else if ((user && user._id === account.owner) && (account.opportunities[0] !== undefined)) {
+      accountJsx = (
+        <div className="card" key={account._id}>
+          <div className="card-body">
+            <h4 className="card-title">{account.accountName}</h4>
+            <p className="card-text">{account.industry}</p>
+            <p className="card-text">{account.contact}</p>
+            <p className="card-text">{account.email}</p>
+            <p className="card-text">{account.address}</p>
+            <p className="card-text">{account.phone}</p>
+            <p className="card-text">User Name: {account.owner.userName}</p>
+            <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
+            <hr/>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].opportunityName}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].stage}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].probability}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].amount}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].closeDate}</p>
+            <p className="card-text">Opportunity Name: {account.opportunities[0].dateCreated}</p>
+          </div>
+        </div>
+      )
+    } else {
+
     }
     return (
       <div className="row">
