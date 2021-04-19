@@ -74,7 +74,7 @@ class AccountIndex extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr className="tableCard">
                 <td><Link to={`/accounts/${account._id}`} key={account._id}>{account.accountName}</Link></td>
                 <td><Link to={`/accounts/${account._id}`} key={account._id}>{account.industry}</Link></td>
                 <td><Link to={`/accounts/${account._id}`} key={account._id}>{account.contact}</Link></td>
@@ -86,12 +86,12 @@ class AccountIndex extends Component {
               </tr>
             </tbody>
           </table>
-          <table className="table table-sm">
+          <table className="table table-sm tableCard">
             <thead>
               <tr className="table-warning">
                 <th scope="col">Opportunity Name</th>
                 <th scope="col">stage</th>
-                <th scope="col">`Probability (%)`</th>
+                <th scope="col">Probability</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Date Created</th>
                 <th scope="col">Close Date</th>
@@ -106,7 +106,7 @@ class AccountIndex extends Component {
     ) : (
       <div className="py-2" key={account._id}>
         <span className="borderTable">
-          <table className="table table-sm">
+          <table className="table table-sm tableCard">
             <thead>
               <tr className="table-primary">
                 <th scope="col">Account Name</th>
@@ -120,7 +120,7 @@ class AccountIndex extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr className="tableCard">
                 <td><Link to={`/accounts/${account._id}`} key={account._id}>{account.accountName}</Link></td>
                 <td><Link to={`/accounts/${account._id}`} key={account._id}>{account.industry}</Link></td>
                 <td><Link to={`/accounts/${account._id}`} key={account._id}>{account.contact}</Link></td>
@@ -132,7 +132,7 @@ class AccountIndex extends Component {
               </tr>
             </tbody>
           </table>
-          <table className="table table-sm">
+          <table className="table table-sm tableCard">
             <thead>
               <tr className="table-warning">
                 <th scope="col">Opportunity Name</th>
@@ -162,7 +162,7 @@ class AccountIndex extends Component {
       <div>
         {/* {this.state.index}
         <button onClick={() => this.increaseIndex()}>Increase index </button> */}
-        <button type="button" className="btn btn-outline-primary justify-content-center mx-auto py-2"><Link to={'/account-create'}>Create Account</Link></button>
+        <button type="button" className="btn btn-secondary justify-content-center mx-auto py-2"><Link to={'/account-create'}>Create Account</Link></button>
         <h6>{accountJsx}</h6>
       </div>
     )

@@ -48,11 +48,11 @@ class HomeAccountPage extends Component {
       <div className="card" key={account._id}>
         <div className="card-body">
           <Link to={`/accounts/${account._id}`} key={account._id}><h4 className="card-title">{account.accountName}</h4></Link>
-          <p className="card-text">{account.industry}</p>
-          <p className="card-text">{account.contact}</p>
-          <p className="card-text">{account.email}</p>
-          <p className="card-text">{account.address}</p>
-          <p className="card-text">{account.phone}</p>
+          <p className="card-text">Industry: {account.industry}</p>
+          <p className="card-text">Contact: {account.contact}</p>
+          <p className="card-text">Email: {account.email}</p>
+          <p className="card-text">Address: {account.address}</p>
+          <p className="card-text">Phone: {account.phone}</p>
           <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
         </div>
       </div>

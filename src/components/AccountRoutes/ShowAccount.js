@@ -69,21 +69,20 @@ class ShowAccount extends Component {
         <div className="card" key={account._id}>
           <div className="card-body">
             <h4 className="card-title">{account.accountName}</h4>
-            <p className="card-text">{account.industry}</p>
-            <p className="card-text">{account.contact}</p>
-            <p className="card-text">{account.email}</p>
-            <p className="card-text">{account.address}</p>
-            <p className="card-text">{account.phone}</p>
-            <p className="card-text">User Name: {account.owner.userName}</p>
+            <p className="card-text"><span className="text-muted">Industry: </span>{account.industry}</p>
+            <p className="card-text"><span className="text-muted">Contact: </span>{account.contact}</p>
+            <p className="card-text"><span className="text-muted">Email: </span>{account.email}</p>
+            <p className="card-text"><span className="text-muted">Address: </span>{account.address}</p>
+            <p className="card-text"><span className="text-muted">Phone: </span>{account.phone}</p>
+            <p className="card-text"><span className="text-muted">User Name: </span>{account.owner.userName}</p>
             <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
             <hr/>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].opportunityName}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].ownerOppor}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].stage}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].probability}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].amount}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].closeDate}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].dateCreated}</p>
+            <p className="card-text"><span className="text-muted">Opportunity Name: </span>{account.opportunities[0].opportunityName}</p>
+            <p className="card-text"><span className="text-muted">Stage: </span>{account.opportunities[0].stage}</p>
+            <p className="card-text"><span className="text-muted">Probability: </span>{account.opportunities[0].probability}</p>
+            <p className="card-text"><span className="text-muted">Amount: </span>{account.opportunities[0].amount}</p>
+            <p className="card-text"><span className="text-muted">Close Date: </span>{account.opportunities[0].closeDate}</p>
+            <p className="card-text"><small className="text-muted">Created: {account.opportunities[0].dateCreated.substring(0, 10)}</small></p>
           </div>
         </div>
       )
@@ -129,20 +128,20 @@ class ShowAccount extends Component {
         <div className="card" key={account._id}>
           <div className="card-body">
             <h4 className="card-title">{account.accountName}</h4>
-            <p className="card-text">{account.industry}</p>
-            <p className="card-text">{account.contact}</p>
-            <p className="card-text">{account.email}</p>
-            <p className="card-text">{account.address}</p>
-            <p className="card-text">{account.phone}</p>
-            <p className="card-text">User Name: {account.owner.userName}</p>
+            <p className="card-text"><span className="text-muted">Industry: </span>{account.industry}</p>
+            <p className="card-text"><span className="text-muted">Contact: </span>{account.contact}</p>
+            <p className="card-text"><span className="text-muted">Email: </span>{account.email}</p>
+            <p className="card-text"><span className="text-muted">Address: </span>{account.address}</p>
+            <p className="card-text"><span className="text-muted">Phone: </span>{account.phone}</p>
+            <p className="card-text"><span className="text-muted">User Name: </span>{account.owner.userName}</p>
             <p className="card-text"><small className="text-muted">Created: {account.dateCreated.substring(0, 10)}</small></p>
             <hr/>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].opportunityName}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].stage}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].probability}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].amount}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].closeDate}</p>
-            <p className="card-text">Opportunity Name: {account.opportunities[0].dateCreated}</p>
+            <p className="card-text"><span className="text-muted">Opportunity Name: </span>{account.opportunities[0].opportunityName}</p>
+            <p className="card-text"><span className="text-muted">Stage: </span> {account.opportunities[0].stage}</p>
+            <p className="card-text"><span className="text-muted">Probability: </span> {account.opportunities[0].probability}</p>
+            <p className="card-text"><span className="text-muted">Amount: </span> {account.opportunities[0].amount}</p>
+            <p className="card-text"><span className="text-muted">Close Date: </span> {account.opportunities[0].closeDate}</p>
+            <p className="card-text"><small className="text-muted">Created: {account.opportunities[0].dateCreated.substring(0, 10)}</small></p>
           </div>
         </div>
       )
