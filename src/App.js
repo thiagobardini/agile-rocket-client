@@ -18,6 +18,10 @@ import AccountUpdate from './components/AccountRoutes/UpdateAccount'
 import HomePageAccount from './components/AccountRoutes/HomePageAccount'
 import './index.scss'
 
+// OPPORTUNITIES COMPONENTS
+import OpportunityCreate from './components/OpportunityRoutes/CreateOpportunity'
+// import OpportunityUpdate from './components/OpportunityRoutes/UpdateOpportunity'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -95,6 +99,12 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/' render={() => (
             <HomePageAccount msgAlert={this.msgAlert} />
           )}/>
+          {/* <AuthenticatedRoute user={user} path='/accounts/:id/opportunity-update' render={() => (
+            <OpportunityUpdate msgAlert={this.msgAlert} user={user} />
+          )} /> */}
+          <AuthenticatedRoute user={user} exact path='/accounts/:id/opportunity-create' render={() => (
+            <OpportunityCreate msgAlert={this.msgAlert} user={user} />
+          )} />
         </main>
         <div className="jumbotron jumbotron-fluid fixed-bottom footer-group mt-5">
           <div className="container-fluid">

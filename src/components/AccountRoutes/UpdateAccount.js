@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 import AccountForm from '../AccountForm/AccountForm'
 
-import { accountShow, accountUpdate } from '../../api/accounts'
+import { accountUpdate } from '../../api/accounts'
 
 class AccountUpdate extends Component {
   constructor (props) {
@@ -14,24 +14,11 @@ class AccountUpdate extends Component {
         contact: '',
         email: '',
         address: '',
-        phone: ''
+        phone: '',
+        _id: ''
       },
       updated: false
     }
-  }
-
-  componentDidMount () {
-    const { msgAlert, user } = this.props
-    accountShow(user._id)
-      .then(res => this.setState({ account: res.data.account }))
-      .then(() => console.log('ok'))
-      .catch(error => {
-        msgAlert({
-          heading: 'Failed to load the account!',
-          message: 'The account have an error' + error.message,
-          variant: 'danger'
-        })
-      })
   }
 
   handleChange = event => {
