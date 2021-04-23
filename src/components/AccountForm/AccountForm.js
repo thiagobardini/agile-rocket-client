@@ -45,7 +45,7 @@ const AccountForm = ({ account, handleSubmit, handleChange }) => (
     <div className="form-group">
       <label>Phone</label>
       <textarea className="form-control"
-        placeholder='Enter phone'
+        placeholder='Enter phone (ex: XXX-XXX-XXXX)'
         name='phone'
         value={account.phone}
         onChange={handleChange}></textarea>

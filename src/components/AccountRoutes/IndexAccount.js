@@ -149,7 +149,7 @@ class AccountIndex extends Component {
                 <td>{account.opportunities[0].stage}</td>
                 <td>{account.opportunities[0].probability}</td>
                 <td>{account.opportunities[0].amount}</td>
-                <td>{account.opportunities[0].closeDate}</td>
+                <td>{account.opportunities[0].closeDate.substring(0, 10)}</td>
                 <td>{account.opportunities[0].dateCreated.substring(0, 10)}</td>
               </tr>
             </tbody>

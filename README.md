@@ -17,10 +17,10 @@ Manage Accounts and Opportunities administrative tasks, and close more deals fas
 
 ## Important Links
 
-- [Job Logger Client Repo](https://github.com/thiagobardini/agile-rocket-client)
-- [Job Logger API Repo](https://github.com/thiagobardini/agile-rocket-api)
-- [Deployed Job Logger API](https://mysterious-sierra-58663.herokuapp.com/)
-- [Deployed Job Logger Client](https://thiagobardini.github.io/agile-rocket-client/#/)
+- [Agile Rocket Client Repo](https://github.com/thiagobardini/agile-rocket-client)
+- [Agile Rocket API Repo](https://github.com/thiagobardini/agile-rocket-api)
+- [Deployed Agile Rocket API](https://mysterious-sierra-58663.herokuapp.com/)
+- [Deployed Agile Rocket Client](https://thiagobardini.github.io/agile-rocket-client/#/)
 
 ## User Stories
 - As a user, I want to be able to sign in/up.
@@ -82,6 +82,31 @@ component instance is used to manage all alerts application-wide. The alert can 
 This file will determine whether you're in a production or development
 environment and choose an API URL accordingly. Don't forget to replace the
 `production` URL with your deployed API's URL.
+
+## API Routes
+| Verb   | URI Pattern        | Request Body      | Headers   | Action              |
+|--------|--------------------|-------------------|-----------|---------------------|
+| POST   | `/sign-up`         | **credentials**   | N/A       | user sign-up        |
+| POST   | `/sign-in`         | **credentials**   | N/A       | user sign-in        |
+| DELETE | `/sign-out`        | N/A               | **Token** | user sign-out       |
+| PATCH  | `/change-password` | **passwords**     | **Token** | change-password     |
+|        |                    |                   |           |                     |
+| GET    | `/accounts`           | N/A               | N/A       | index accounts         |
+| GET    | `/accounts/:id`       | N/A               | N/A       | show single account    |
+| POST   | `/accounts`           | `post: {}`        | **Token** | create account         |
+| PATCH  | `/accounts/:id`       | post              | **Token** | update account         |
+| DELETE | `/accounts/:id`       | N/A               | **Token** | remove account         |
+|        |                    |                   |           |                     |
+| GET    | `/opportunities`        | N/A               | **Token** | index account opportunities |
+| GET    | `/opportunities/:id`    | N/A               | **Token** | show account opportunity   |
+| POST   | `/opportunities`        | `opportunity: {}`     | **Token** | create account opportunity |
+| PATCH  | `/opportunities/:id`    | opportunity           | **Token** | update account opportunity |
+| DELETE | `/opportunities/:id`    | N/A               | **Token** | delete account opportunity |
+
+### Unsolved Problems
+- I want to improve styling.
+- Version 2, I am still working on - I still need to create some features as create multiple opportunities/show all/update/delete for opportunities.
+- For version 3, I want to create some charts and data reports.
 
 
 ## Wireframes

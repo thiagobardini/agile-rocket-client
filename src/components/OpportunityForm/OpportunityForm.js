@@ -13,15 +13,15 @@ const OpportunityForm = ({ opportunity, handleSubmit, handleChange }) => (
     <div className="form-group">
       <label>Stage</label>
       <textarea className="form-control"
-        placeholder='Enter stage'
+        placeholder='Enter stage (ex: Prospecting, Needs Analysis, Proposal, Closed Won/Loss )'
         name='stage'
         value={opportunity.stage}
         onChange={handleChange}></textarea>
     </div>
     <div className="form-group">
-      <label>Probability</label>
+      <label>Probability %</label>
       <textarea className="form-control"
-        placeholder='Enter probability'
+        placeholder='Enter probability (from 0 to 100)'
         name='probability'
         value={opportunity.probability}
         onChange={handleChange}></textarea>
@@ -29,7 +29,7 @@ const OpportunityForm = ({ opportunity, handleSubmit, handleChange }) => (
     <div className="form-group">
       <label>Amount</label>
       <textarea className="form-control"
-        placeholder='Enter amount'
+        placeholder='Enter amount (ex: 10000)'
         name='amount'
         value={opportunity.amount}
         onChange={handleChange}></textarea>
@@ -37,7 +37,7 @@ const OpportunityForm = ({ opportunity, handleSubmit, handleChange }) => (
     <div className="form-group">
       <label>Close Date</label>
       <textarea className="form-control"
-        placeholder='Enter close date'
+        placeholder='Enter close date (ex: 2021-04-22)'
         name='closeDate'
         value={opportunity.closeDate}
         onChange={handleChange}></textarea>
