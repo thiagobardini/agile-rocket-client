@@ -2,7 +2,7 @@
 CRM - Custom Relation Management 
 <br>
 Manage Accounts and Opportunities administrative tasks, and close more deals faster.
-
+![](https://i.imgur.com/F7NgqkO.png)
 ## Technologies used for the Application.
 - HTML
 - SCSS
@@ -115,5 +115,3 @@ environment and choose an API URL accordingly. Don't forget to replace the
 ![](https://i.imgur.com/OjVbpjq.png)
 ![](https://i.imgur.com/o1rPn0T.png)
 ![](https://i.imgur.com/T2hMBFZ.png)
-## ERD
-![](https://i.imgur.com/NqYzWFc.png)
