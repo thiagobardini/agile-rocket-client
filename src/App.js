@@ -22,6 +22,10 @@ import './index.scss'
 import OpportunityCreate from './components/OpportunityRoutes/CreateOpportunity'
 // import OpportunityUpdate from './components/OpportunityRoutes/UpdateOpportunity'
 
+// STYLING
+import MainGrid from './components/MainGrid/MainGrid'
+import Box from './components/Box/Box'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -31,20 +35,22 @@ class App extends Component {
     }
   }
 
-  setUser = user => this.setState({ user })
+  setUser = (user) => this.setState({ user })
 
   clearUser = () => this.setState({ user: null })
 
   deleteAlert = (id) => {
     this.setState((state) => {
-      return { msgAlerts: state.msgAlerts.filter(msg => msg.id !== id) }
+      return { msgAlerts: state.msgAlerts.filter((msg) => msg.id !== id) }
     })
   }
 
   msgAlert = ({ heading, message, variant }) => {
     const id = uuid()
     this.setState((state) => {
-      return { msgAlerts: [...state.msgAlerts, { heading, message, variant, id }] }
+      return {
+        msgAlerts: [...state.msgAlerts, { heading, message, variant, id }]
+      }
     })
   }
 
@@ -54,7 +60,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header user={user} />
-        {msgAlerts.map(msgAlert => (
+        {msgAlerts.map((msgAlert) => (
           <AutoDismissAlert
             key={msgAlert.id}
             heading={msgAlert.heading}
@@ -64,51 +70,114 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
-        <main className="container">
-          <Route path='/sign-up' render={() => (
-            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
-          )} />
-          <Route path='/sign-in' render={() => (
-            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
-          )} />
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
-            <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} exact path='/account-create' render={() => (
-            <AccountCreate msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} exact path='/accounts' render={() => (
-            <AccountIndex msgAlert={this.msgAlert} user={user} />
-          )} />
-          <Route user={user} exact path='/accounts/:id' render={() => (
-            <AccountShow msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} exact path='/accounts/:id/edit' render={() => (
-            <AccountUpdate msgAlert={this.msgAlert} user={user} />
-          )}/>
-          <Route exact path='/' render={() => (
-            <div className="jumbotron">
-              <h1 className="display-4">Welcome!</h1>
-              <p className="lead">Agile Rocket -  CRM</p>
-              <hr className="my-4"/>
-            </div>
-          )}/>
-          <AuthenticatedRoute user={user} exact path='/' render={() => (
-            <HomePageAccount msgAlert={this.msgAlert} />
-          )}/>
-          {/* <AuthenticatedRoute user={user} path='/accounts/:id/opportunity-update' render={() => (
-            <OpportunityUpdate msgAlert={this.msgAlert} user={user} />
-          )} /> */}
-          <AuthenticatedRoute user={user} exact path='/accounts/:id/opportunity-create' render={() => (
-            <OpportunityCreate msgAlert={this.msgAlert} user={user} />
-          )} />
-        </main>
-        <div className="jumbotron jumbotron-fluid fixed-bottom footer-group mt-5">
-          <div className="container-fluid">
-            <p>Copyright &copy; 2021 - by <a href="https://github.com/thiagobardini" className="button gitRepo" data-abc="true">Thiago Bardini</a></p>
+
+        <MainGrid>
+          <div className='welcomeArea' style={{ gridArea: 'welcomeArea' }}>
+            <Box>
+              <Route
+                path='/sign-up'
+                render={() => (
+                  <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+                )}
+              />
+              <Route
+                path='/sign-in'
+                render={() => (
+                  <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+                )}
+              />
+              <AuthenticatedRoute
+                user={user}
+                path='/sign-out'
+                render={() => (
+                  <SignOut
+                    msgAlert={this.msgAlert}
+                    clearUser={this.clearUser}
+                    user={user}
+                  />
+                )}
+              />
+              <AuthenticatedRoute
+                user={user}
+                path='/change-password'
+                render={() => (
+                  <ChangePassword msgAlert={this.msgAlert} user={user} />
+                )}
+              />
+              <AuthenticatedRoute
+                user={user}
+                exact
+                path='/account-create'
+                render={() => (
+                  <AccountCreate msgAlert={this.msgAlert} user={user} />
+                )}
+              />
+              <AuthenticatedRoute
+                user={user}
+                exact
+                path='/accounts'
+                render={() => <AccountIndex msgAlert={this.msgAlert} user={user} />}
+              />
+              <Route
+                user={user}
+                exact
+                path='/accounts/:id'
+                render={() => <AccountShow msgAlert={this.msgAlert} user={user} />}
+              />
+              <AuthenticatedRoute
+                user={user}
+                exact
+                path='/accounts/:id/edit'
+                render={() => (
+                  <AccountUpdate msgAlert={this.msgAlert} user={user} />
+                )}
+              />
+              <Route
+                exact
+                path='/'
+                render={() => (
+                  <div className='jumbotron background2'>
+                    <h1 className='display-4'>Welcome!</h1>
+                    <p className='lead'>Agile Rocket - CRM</p>
+                    <hr className='my-4' />
+                    <img src="https://i.imgur.com/7GmhGbi.png" />
+                  </div>
+                )}
+              />
+            </Box>
+            <Box>
+              <AuthenticatedRoute
+                user={user}
+                exact
+                path='/'
+                render={() => <HomePageAccount msgAlert={this.msgAlert} />}
+              />
+              {/* <AuthenticatedRoute user={user} path='/accounts/:id/opportunity-update' render={() => (
+                <OpportunityUpdate msgAlert={this.msgAlert} user={user} />
+              )} /> */}
+              <AuthenticatedRoute
+                user={user}
+                exact
+                path='/accounts/:id/opportunity-create'
+                render={() => (
+                  <OpportunityCreate msgAlert={this.msgAlert} user={user} />
+                )}
+              />
+            </Box>
+          </div>
+        </MainGrid>
+        <div className='jumbotron jumbotron-fluid fixed-bottom footer-group mt-5'>
+          <div className='container-fluid'>
+            <p>
+              Copyright &copy; 2021 - by{' '}
+              <a
+                href='https://github.com/thiagobardini'
+                className='button gitRepo'
+                data-abc='true'
+              >
+                Thiago Bardini
+              </a>
+            </p>
           </div>
         </div>
       </Fragment>

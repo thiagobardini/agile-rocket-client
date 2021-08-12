@@ -1,5 +1,8 @@
 {
-  "extends": ["plugin:react/recommended", "standard"],
+  "extends": [
+    "plugin:react/recommended",
+    "standard"
+  ],
   "root": true,
   "parser": "babel-eslint",
   "settings": {
@@ -11,9 +14,9 @@
     "sourceType": "module"
   },
   "env": {
-      "node": true,
-      "es6": true,
-      "browser": true
+    "node": true,
+    "es6": true,
+    "browser": true
   },
   "rules": {
     "prefer-const": "error",
@@ -26,7 +29,12 @@
       "error",
       "single"
     ],
-    "indent": ["error", 2],
-    "react/prop-types": [0]
+    "indent": [
+      "error",
+      2
+    ],
+    "react/prop-types": [
+      0
+    ]
   }
 }
