@@ -52,6 +52,15 @@ class ShowAccount extends Component {
     const { account, deleted } = this.state
     // console.log('This is user: ', user)
     let accountJsx = ''
+    const accountContent = account => {
+      const content = []
+      for (const item in account.opportunities) {
+        // console.log('loop' + item)
+        content.push(<li key={item._id}>{item.accountName}</li>)
+      }
+      console.log(content)
+      return content
+    }
     if (deleted) {
       return <Redirect to='/'/>
     }
@@ -109,6 +118,7 @@ class ShowAccount extends Component {
         </div>
       )
     } else if ((user.email === account.owner.email) && (account.opportunities[0] !== undefined)) {
+      console.log(account)
       accountJsx = (
         <div className="card" key={account._id}>
           <div className="card-body">
@@ -131,6 +141,9 @@ class ShowAccount extends Component {
             <p className="card-text"><span className="text-muted">Close Date: </span>{account.opportunities[0].closeDate}</p>
             <p className="card-text"><small className="text-muted">Created: {account.opportunities[0].dateCreated.substring(0, 10)}</small></p>
           </div>
+          <ul>
+            <li>{accountContent}</li>
+          </ul>
         </div>
       )
     } else if ((user.email === account.owner.email) && (account.opportunities[0] === undefined)) {
