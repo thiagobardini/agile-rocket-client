@@ -24,3 +24,15 @@ export const opportunityUpdate = (id, opportunity, user) => {
     data: { opportunity }
   })
 }
+
+// SHOW ALL by Account ID
+export const opportunityIndex = (id, opportunity, user) => {
+  return axios({
+    url: apiUrl + '/accounts/' + id + opportunity,
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${user.token}`
+    },
+    data: { opportunity }
+  })
+}
